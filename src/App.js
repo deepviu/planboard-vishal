@@ -62,7 +62,7 @@ function App({ isLogout }) {
           <Navbar isAuth={isAuth} />
           <Sidebar isAuth={isAuth} rolId={rolId} />
           <Routes>
-            {/* <Route path="*" element={isAuth ? <Navigate to="/dashboard" /> : <Login />} />   */}
+            <Route path="*" element={isAuth ? <Navigate to="/dashboard" /> : <Login />} />  
             <Route
               path="/"
               element={
@@ -126,7 +126,7 @@ function App({ isLogout }) {
                   <Navigate to="/login" />
                 )
               }
-            />
+            /> 
             <Route
               path="/verifyemail"
               element={
@@ -148,7 +148,7 @@ function App({ isLogout }) {
               }
             />
 
-            <Route
+             <Route
               path="/dashboard"
               element={<PrivateRoute element={<Dashboard />} />}
             />
@@ -183,7 +183,8 @@ function App({ isLogout }) {
           </Routes>
         </div>
       </BrowserRouter>
-    </>
+      
+    </> 
   );
 }
 
