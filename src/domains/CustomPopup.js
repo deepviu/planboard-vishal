@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { tableBody,tableHeader } from "./zone/wgt_Depotwise_TableData";
 import RuleComponent from "../components/RuleComponent";
 const CustomPopup = (props) => {
-  console.log(props);
+  
   const [show, setShow] = useState(false);
 
   const closeHandler = (e) => {
@@ -17,10 +17,38 @@ const CustomPopup = (props) => {
   }, [props.show]);
   
   const getDealer = () => {
-    const dealer = props.dealerData.find((item) => item.id === props.selectedDealer[props.selectedDealerType]);
+    const dealer = props.dealerData.find((item) => item.id === props.selectedDealer);
     if(dealer) {
       return "/" + dealer.name;
     } else {
+      return "";
+    }
+  }
+  const getZone = () => {
+    const zone =  props.zoneData.find((item) => item.id === props.selectedZone[props.selectedZoneType])
+    if(zone){
+      return  zone.name ;
+    }
+    else{
+      return "";
+    }
+  }
+  const getDepo = () => {
+    const depo =  props.depoData.find((item) => item.id === props.selectedDepo[props.selectedDepoType])
+    if(depo){
+      return "/" + depo.name
+    }
+    else{
+      return "";
+    }
+  }
+
+  const getSales = () => {
+    const sale =  props.plansData.find((item) => item.id === props.selectedSales[props.selectedSalesType])
+    if(sale){
+      return "/" + sale.name
+    }
+    else{
       return "";
     }
   }
@@ -48,8 +76,9 @@ const CustomPopup = (props) => {
           &times;
         </span>
         <div className={popupStyles.content}>
-        {props.zoneData.find((item) => item.id === props.selectedZone[props.selectedZoneType])?.name}  
-        / {props.depoData.find((item) => item.id === props.selectedDepo[props.selectedDepoType])?.name} 
+        {getZone()}
+        {getSales()} 
+        {getDepo()} 
         {getTerriotry()}
         {getDealer()}
         </div>
