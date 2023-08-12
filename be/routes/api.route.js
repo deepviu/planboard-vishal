@@ -3,6 +3,7 @@ const sql = require("../services/planboard.services");
 
 const router = express.Router();
 
+
 router.get("/get-depot", function (req, res) {
   const Wgt_Depotwise_Data = [
     {
