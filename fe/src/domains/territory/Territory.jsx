@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import TerritoryTable from "../../components/TerritoryTable";
-import { Wgt_Territory_Data } from "../zone/Wgt_Territory_Data";
+
 import CustomPopupModal from "../../components/CustomPopupModal";
 const Territory = () => {
     const [visibility, setVisibility] = useState(false);
@@ -51,7 +51,7 @@ const Territory = () => {
                         </select>
                     </form>
                 </div>
-                {<TerritoryTable tableData={Wgt_Territory_Data} />}
+                {<TerritoryTable  />}
 
             </div>
             <CustomPopupModal

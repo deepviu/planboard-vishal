@@ -3,6 +3,7 @@ const sql = require("../services/planboard.services");
 
 const router = express.Router();
 
+
 router.get("/get-depot", function (req, res) {
   const Wgt_Depotwise_Data = [
     {
@@ -233,7 +234,7 @@ router.get("/get-zone", function (req, res) {
     {
       id: 3,
       title: "West",
-      bg: "w3-orange",
+      bg: "w3-blue-grey",
       ly: "130",
       target: "160",
       target_percentage: "26",

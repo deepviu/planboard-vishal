@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../../App.css";
 
 const Wgt_Zone_Ui = ({ data }) => {
   return (
@@ -7,7 +8,7 @@ const Wgt_Zone_Ui = ({ data }) => {
 
         <Link className="link" to={`/zone_detail/${data.id}`}>
 
-          <div className={`w3-container w3-padding-16 ` + data.bg} >
+          <div className={`w3-container w3-round-large  boxing w3-padding-16 ` + data.bg} >
 
             <div className="w3-clear ">
               <span className=" w3-xlarge w3-left">

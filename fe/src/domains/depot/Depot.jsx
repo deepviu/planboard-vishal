@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import DepotTable from "../../components/DepotTable"
 import PropTypes from "prop-types";
-import { Wgt_Depotwise_Data } from "../zone/Wgt_Depotwise_Data"
+
 
 import CustomPopupModal from "../../components/CustomPopupModal";
 
@@ -55,7 +55,7 @@ const Depot = (props) => {
                         </select>
                     </form>
                 </div>
-                {<DepotTable tableData={Wgt_Depotwise_Data} />}
+                {<DepotTable />}
 
 
                 <CustomPopupModal

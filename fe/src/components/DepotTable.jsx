@@ -1,7 +1,22 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Link } from "react-router-dom"
+import axios from "axios"
 
-const DepotTable = ({ tableData }) => {
+const DepotTable = () => {
+    const[depoData,setDepoData] = useState([])
+      
+
+    const fetchDepoData = async() => {
+        const response = await axios.get(`http://localhost:5500/api/get-depot`)
+ 
+        const newData = response.data;
+        setDepoData(newData)
+ 
+     }
+
+    useEffect(() =>{
+      fetchDepoData()
+    },[])
     return (
         <div>
             <table className="w3-table table-bordered "  >
@@ -18,7 +33,7 @@ const DepotTable = ({ tableData }) => {
                 </thead>
                 <tbody>
 
-                    {tableData.map((data) => (
+                    {depoData.map((data) => (
                         <>
 
 

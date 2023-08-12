@@ -1,7 +1,27 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {Link} from "react-router-dom"
+import axios from "axios"
 
-const TerritoryTable = ({ tableData }) => {
+const TerritoryTable = () => {
+
+
+    const [terriotryData,setTerriotryData] = useState([])
+
+
+    const fetchapi = async() => {
+       const response = await axios.get(`http://localhost:5500/api/get-terriotry`)
+
+       const newData = response.data;
+       setTerriotryData(newData)
+
+    }
+
+
+    useEffect(()=>{
+
+        fetchapi()
+
+    },[])
     return (
         <div>
             <table className="w3-table table-bordered "  >
@@ -17,7 +37,7 @@ const TerritoryTable = ({ tableData }) => {
                 </thead>
                 <tbody>
 
-                    {tableData.map((data) => (
+                    {terriotryData.map((data) => (
                         <>
 
 

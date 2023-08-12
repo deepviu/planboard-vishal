@@ -1,5 +1,6 @@
 
 import { useState, } from "react";
+import "../../App.css";
 
 
 
@@ -8,7 +9,7 @@ import 'reactjs-popup/dist/index.css';
 import CustomPopup from "../CustomPopup";
 
 
-import { Wgt_Depotwise_Data } from "./Wgt_Depotwise_Data";
+
 
 
 import { Wgt_Territory_Data } from "./Wgt_Territory_Data"
@@ -106,8 +107,9 @@ const Zone = () => {
   return (
     <>
       <div className=" main ">
+      <div class="w3-row w3-padding-16"></div>
 
-        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top w3-white ">
+        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top w3-white w3-round-large  boxing">
 
           <div class="w3-col l3 m4 s12 ">
             <span className="w3-small h6 w3-text-gray"> Zone </span> <br />
@@ -173,7 +175,7 @@ const Zone = () => {
 
 
 
-        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top  w3-margin-bottom w3-white ">
+        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top  w3-margin-bottom w3-white w3-round-large  boxing">
 
 
           <div class="w3-col l3 m4 s12 ">
@@ -255,14 +257,14 @@ const Zone = () => {
               </select>
             </form>
           </div>
-          <DepotTable tableData={Wgt_Depotwise_Data} />
+          <DepotTable  />
 
         </div>
 
         <div class="w3-row w3-padding-16">
         </div>
 
-        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top  w3-margin-bottom w3-white ">
+        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top  w3-margin-bottom w3-white w3-round-large  boxing">
 
 
           <div class="w3-col l3 m4 s12 ">
@@ -359,7 +361,7 @@ const Zone = () => {
             </form>
           </div>
 
-          <TerritoryTable tableData={Wgt_Territory_Data} />
+          <TerritoryTable />
 
 
 
@@ -371,7 +373,7 @@ const Zone = () => {
 
 
 
-        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top  w3-margin-bottom w3-white ">
+        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top  w3-margin-bottom w3-white w3-round-large  boxing">
 
           <div class="w3-col l3 m4 s12 ">
             <span className="w3-small h6 w3-text-gray"> Zone </span> <br />
@@ -479,7 +481,7 @@ const Zone = () => {
 
 
 
-        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top  w3-margin-bottom w3-white ">
+        <div class="w3-row w3-row-padding w3-padding-16 w3-margin-top  w3-margin-bottom w3-white w3-round-large  boxing">
 
 
 

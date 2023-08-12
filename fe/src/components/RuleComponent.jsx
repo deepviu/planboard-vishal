@@ -3,7 +3,7 @@ import axios from "axios"
 
 
 
-const RuleComponent = ({  tableData }) => {
+const RuleComponent = () => {
     const [ruleData,setRuleData] = useState([])
 
 
