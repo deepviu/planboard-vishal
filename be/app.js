@@ -18,7 +18,8 @@
 
 const express = require("express");
 const app = express();
-
+const cors = require("cors");
+app.use(cors());
 const port = normalizaPort(process.env.PORT || '5500');
 
 
@@ -38,6 +39,11 @@ app.listen(port, function () {
     console.log(`app listening on http://localhost:${port}`)
 });
 
+
+
+
 const planBoard = require('./routes/planboard.route');
+const api = require('./routes/api.route');
 app.use('/planBoard', planBoard);
+app.use('/api', api);
 module.exports = app;

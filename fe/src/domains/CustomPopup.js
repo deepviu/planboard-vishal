@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import popupStyles from "./custom-popup.module.css";
 import PropTypes from "prop-types";
-import { tableBody,tableHeader } from "./zone/wgt_Depotwise_TableData";
+
 import RuleComponent from "../components/RuleComponent";
 const CustomPopup = (props) => {
   
@@ -82,7 +82,7 @@ const CustomPopup = (props) => {
         {getTerriotry()}
         {getDealer()}
         </div>
-        {< RuleComponent tableHeader={tableHeader} tableData={tableBody} />}
+        {< RuleComponent  />}
       </div>
       
       

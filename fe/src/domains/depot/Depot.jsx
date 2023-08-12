@@ -14,6 +14,7 @@ const Depot = (props) => {
     
 
     return (
+        <>
         <div className="main  w3-border">
 
             <div className="w3-row w3-row-padding w3-padding-16 w3-margin-top  w3-margin-bottom w3-white ">
@@ -66,6 +67,7 @@ const Depot = (props) => {
             </div>
 
         </div>
+        </>
     )
 }
 

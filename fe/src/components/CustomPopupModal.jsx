@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import popupStyles from "../domains/custom-popup.module.css";
 
 import RuleComponent from './RuleComponent';
-import { tableBody,tableHeader } from "../domains/zone/wgt_Depotwise_TableData";
+
 
 
 const CustomPopupModal = (props) => {
@@ -33,7 +33,7 @@ const CustomPopupModal = (props) => {
         <div className={popupStyles.content}>
         
         </div>
-        {< RuleComponent tableHeader={tableHeader} tableData={tableBody} />}
+        {< RuleComponent  />}
       </div>
       
       
