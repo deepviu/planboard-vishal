@@ -1,13 +1,19 @@
 import { useEffect, useState, useContext } from "react";
 import { Navigate, Link, useNavigate } from "react-router-dom";
+import axios from "axios"
 
 import Wgt_Zone_Ui from "./Wgt_Zone_Ui"
-import { Wgt_Zone_Data } from "./Wgt_Zone_Data"
+
 
 import Wgt_Statewise_Ui from "./Wgt_Statewise_Ui"
-import { Wgt_Statewise_Data } from "./Wgt_Statewise_Data"
+
 
 const National = () => {
+
+  const [stateData,setStateData] = useState([])
+
+  const [zoneData,setZoneData] = useState([])
+  const [zoneArea,setZoneArea] = useState([])
 
   // Set Select Zone 
   const [list_mst_Zone, setZone] = useState("North");
@@ -15,6 +21,35 @@ const National = () => {
     setZone(event.target.value)
   }
 
+  const fetchStateData = async() => {
+    const response = await axios.get(`http://localhost:5500/api/get-state`)
+
+    const newData = await response.data;
+    setStateData(newData)
+
+ }
+
+ const fetchZoneArea = async() => {
+  const response = await axios.get(`http://localhost:5500/api/get-zone-area`)
+
+  const newData = await response.data;
+  setZoneArea(newData)
+
+}
+
+ const fetchZoneData = async() => {
+  const response = await axios.get(`http://localhost:5500/api/get-zone`)
+
+  const newData = await response.data;
+  setZoneData(newData)
+
+}
+  
+  useEffect(() =>{
+    fetchStateData()
+    fetchZoneData()
+    fetchZoneArea()
+  },[])
 
   return (
     <div className=" main ">
@@ -22,7 +57,7 @@ const National = () => {
 
       <div id="Wgt_Zone_Id" class="Wgt_Zone_Class w3-row w3-row-padding ">
 
-        {Wgt_Zone_Data.map(data => (
+        {zoneData.map(data => (
           <Wgt_Zone_Ui key={data.id} data={data} />
         ))}
 
@@ -46,11 +81,17 @@ const National = () => {
             <div class="w3-col l3 m3 s6 w3-right">
               <form>
                 <select className="form-control" >
-                  <option value="North" selected > North </option>
-                  <option value="South">South </option>
-                  <option value="East"> East </option>
-                  <option value="West"> West </option>
-                  <option value="West"> ...  </option>
+
+                  <option value="North" selected > select Area </option>
+                  {
+                    zoneArea.map((item) => (
+                       <>
+                       <option value="">{item.name}</option>
+                       </>
+                    ))
+                  }
+                  
+                  
                 </select>
               </form>
             </div>
@@ -258,7 +299,7 @@ const National = () => {
               <th> Target (%) </th>
               <th> Achieved  (%)</th>
             </tr>
-            {Wgt_Statewise_Data.map(data => (
+            {stateData.map(data => (
               <Wgt_Statewise_Ui key={data.id} data={data} />
             ))}
           </table>

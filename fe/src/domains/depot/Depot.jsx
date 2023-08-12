@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import DepotTable from "../../components/DepotTable"
-import PropTypes from "prop-types";
+
 
 
 import CustomPopupModal from "../../components/CustomPopupModal";
 
-const Depot = (props) => {
+const Depot = () => {
     const [visibility, setVisibility] = useState(false);
 
     const popupCloseHandler = (e) => { setVisibility(e); };
@@ -71,12 +71,6 @@ const Depot = (props) => {
     )
 }
 
-Depot.propTypes = {
-    title: PropTypes.string.isRequired,
-    show: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired,
-    zoneData: PropTypes.array.isRequired,
-    selectedZone: PropTypes.object.isRequired,
-};
+
 
 export default Depot 
